@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #ffc8df ;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.big span {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin-left: 108px;
+    margin-top: 112px;
+}
+
+
+.big div{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+.big{
+    z-index: 2;
+    height: 350px;
+    width: 350px;
+    margin: 200px auto;
+    transform-style: preserve-3d;
+    animation: roll 9s infinite;
+}
+
+.big div img{
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+.big span img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 左右前后上下 */
+
+.img3{
+    transform:translateX(-75px) rotateY(90deg);
+}
+.img4{
+    transform:translateX(75px) rotateY(90deg);
+}
+.img1{
+    transform: translateZ(75px);
+}
+.img2{
+    transform:  translateZ(-75px);
+}
+.img5{
+    transform:translateY(-75px) rotateX(90deg);
+}
+.img6{
+    transform:translateY(75px) rotateX(90deg);
+}
+
+
+.img3_3{
+    transform:translateX(-150px) rotateY(90deg);
+}
+.img4_4{
+    transform:translateX(150px) rotateY(90deg);
+}
+.img1_1{
+    transform: translateZ(150px);
+}
+.img2_2{
+    transform:  translateZ(-150px);
+}
+.img5_5{
+    transform:translateY(-150px) rotateX(90deg);
+}
+.img6_6{
+    transform:translateY(150px) rotateX(90deg);
+}
+@keyframes roll{
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+.big:hover .img1_1{
+    transform: translateZ(300px);
+}
+.big:hover .img2_2{
+    transform: translateZ(-300px);
+}
+.big:hover .img3_3{
+    transform:rotateY(90deg) translateZ(-300px);
+}
+.big:hover .img4_4{
+    transform:rotateY(-90deg) translateZ(-300px);
+}
+.big:hover .img5_5{
+    transform:rotateX(90deg) translateZ(300px);
+}
+.big:hover .img6_6{
+    transform:rotateX(-90deg) translateZ(300px);
+}

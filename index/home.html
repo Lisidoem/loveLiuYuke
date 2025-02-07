@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        body{
+            background: #2980B9;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        .contanier{
+            width: 600px;
+            height: 400px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: #d8d8d8 0px 0px 10px;
+            border-radius:20px 20px;
+        }
+
+        .head{
+            width: 600px;
+            height: 130px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .head-left,.head-right{
+            width: 100px;
+            height: 100px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+        }
+
+        .head-left{
+           position: relative;
+           left: 150px;
+        }
+
+        .head-right{
+            position: relative;
+            left: 240px;
+        }
+
+        .love{
+            width: 20px;
+            font-size: 40px;
+            position: relative;
+            left: 180px;
+        }
+        .head-left img,.head-right img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .function{
+            width: 600px;
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #76beff ;
+        }
+
+        .item{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            background-color: #e5e5ff;
+            cursor: pointer;
+        }
+
+        .item:hover{
+            text-align: center;
+            line-height: 90px;
+            width: 90px;
+            height: 90px;
+            color: #ff9cb0;
+        }
+        .foot {
+            width: 600px;
+            height: 70px;
+            text-align: center;
+        }
+
+        .btn{
+            width: 150px;
+            height: 40px;
+            margin-top: 15px;
+            background-color:#ff5050 ;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <div class="contanier">
+      <div class="head">
+          <div class="head-left"><img src="images/user1.jpg"></div>
+          <div class="love">💞</div>
+          <div class="head-right"><img src="images/user2.jpg"></div>
+      </div>
+      <div class="function">
+          <div class="item">纪念日</div>
+          <div class="item">表白墙</div>
+          <div class="item">黑客爱心</div>
+          <div class="item">旋转相册</div>
+          <div class="item">记忆相册</div>
+      </div>
+      <div class="foot">
+          <button class="btn">退出登录</button>
+      </div>
+  </div>
+
+<script>
+    let itemArr, exit ;
+    itemArr=[]
+    for(let i = 0; i < 5; i++){
+        itemArr[i] = document.getElementsByClassName('item')[i];
+    }
+    exit = document.getElementsByClassName('btn')[0];
+    const go1 = () => {
+        window.location.href = 'main.html';
+    }
+    const go2 = () => {
+        window.location.href = '../LoveSrceen/index.html';
+    }
+    const go3 = () => {
+        window.location.href = '../HackerLove/index.html';
+    }
+    const go4 = () => {
+        window.location.href = '../3DRotateAlbum/index.html';
+    }
+    const go5 = () => {
+        window.location.href = '../album/index.html';
+    }
+    itemArr[0].addEventListener('click', go1);
+    itemArr[1].addEventListener('click', go2);
+    itemArr[2].addEventListener('click', go3);
+    itemArr[3].addEventListener('click', go4);
+    itemArr[4].addEventListener('click', go5);
+    exit.addEventListener('click', () => {
+        if(confirm('确定要退出登录吗？')){
+            window.location.href = '../index.html';
+        }
+    })
+</script>
+</body>
+</html>

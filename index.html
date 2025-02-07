@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>让我来看看这是谁来了😜</title>
+
+    <link
+      rel="stylesheet"
+      href="index/css/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="index/css/style.css" />
+  </head>
+
+  <body>
+    <div class="materialContainer">
+      <div class="box">
+        <div class="title">对对暗号🔐</div>
+        <div class="input">
+          <label for="username">Who are you</label>
+          <input type="text" name="username" id="username" />
+          <span class="spin"></span>
+        </div>
+        <div class="input">
+          <label for="password">Our anniversary</label>
+          <input type="password" name="password" id="password" />
+          <span class="spin"></span>
+        </div>
+        <div class="button login">
+          <button onclick="login()">
+            <span>匹配暗号 🔓</span>
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
+        <a href="javascript:" class="pass-forgot" onclick="forgot()"
+          >忘记暗号点这里😭</a
+        >
+      </div>
+    </div>
+
+    <script src="index/js/jquery.min.js"></script>
+    <script src="index/js"></script>
+    <script>
+      function forgot() {
+        alert('愣着干啥 快来问我🐷');
+      }
+
+      function login() {
+        var username = document.getElementById('username');
+        var pass = document.getElementById('password');
+        if (username.value === '') {
+          alert('让我来看看你的名字叫什么😲');
+          username.focus();
+        } else if (username.value === "刘宇珂" ||username.value ===  "珂宝" || username.value === "宇珂" ||username.value ===  "珂珂") {
+          if (pass.value === '') {
+            alert('还记得我们的第一天吗😘');
+          }else if (pass.value !== '20250111') {
+            alert('密码不对哦😭');
+          }else {
+            alert('验证成功✅ 叮咚 有一封信件');
+            window.location.href = 'index/main.html';
+          }
+        } else {
+          alert('你谁呀？');
+          window.location.href = 'index/Error_Lemon.html';
+        }
+      }
+    </script>
+  </body>
+</html>
